@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+ 
+<beans>
+    <!-- Business Objects -->
+    <bean id="HelloWorld"
+            class="com.francesc.webapplication.spring.bo.HelloWorldBean">
+    </bean>
+ 
+    <!-- Actions Classes -->   
+    <bean name="/HelloWorld" class="com.francesc.webapplication.struts.action.HelloWorldAction">
+        <property name="helloWorldBean"><ref local="HelloWorld"/></property>
+    </bean>
+</beans>
