@@ -15,11 +15,11 @@
 </head>
 <body>
 
-	<form:form action="add.htm" commandName="user">
+	<form:form action="addUser" commandName="user">
 		<table>
 			<tr>
 				<td>User Name :</td>
-				<td><form:input path="name" /></td>
+				<td><form:input path="name" /><c:out value="${user.name}" /></td>
 			</tr>
 			<tr>
 				<td>Password :</td>
@@ -90,8 +90,6 @@
 
 	</form:form>
 
-	<c:if test="1 > 0}">
-
 		<table cellpadding="5">
 
 			<tr class="even">
@@ -124,8 +122,6 @@
 
 		</table>
 
-	</c:if>
 
 </body>
-ss
 </html>

@@ -1,28 +1,26 @@
 package com.francesc.webapplication.spring.bo.impl;
 
 import org.apache.commons.logging.Log;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.francesc.webapplication.spring.dao.Dao;
 
+@Service
 public abstract class BaseBO {
 
-	private Dao dao = null;
-	private Log log = null;
+	@Autowired
+	private Dao dao;
 
-	public Dao getDao() {
+	@Autowired
+	private Log log;
+
+	protected Dao getDao() {
 		return dao;
 	}
 
-	public void setDao(Dao dao) {
-		this.dao = dao;
-	}
-
-	public Log getLog() {
+	protected Log getLog() {
 		return log;
 	}
-
-	public void setLog(Log log) {
-		this.log = log;
-	} 
 
 }

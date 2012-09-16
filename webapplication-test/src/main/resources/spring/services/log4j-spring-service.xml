@@ -2,7 +2,7 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
 
 <beans>
-	<bean id="log4jInitializer" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean" >
+	<bean id="log4jConfigurer" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean" >
 	    <property name="targetClass" value="org.springframework.util.Log4jConfigurer" />
 	    <property name="targetMethod" value="initLogging" />
 	    <property name="arguments">
@@ -11,4 +11,9 @@
 	        </list>
 	    </property>
 	</bean>
+    
+    <bean id="log"
+        class="org.springframework.beans.factory.config.CommonsLogFactoryBean">
+        <property name="logName" value="log" />
+    </bean>
 </beans>

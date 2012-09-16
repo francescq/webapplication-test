@@ -7,7 +7,7 @@
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
- 
+       
     <!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
  
     <!-- Scans within the base package of the application for @Components to configure as beans -->
@@ -15,20 +15,9 @@
     
     
     <context:component-scan base-package="com.francesc.webapplication" />
-    
+    <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
 
-    <import resource="classes/SpringContext.xml"/>
-   
     <!-- Enables the Spring MVC @Controller programming model -->
     <mvc:annotation-driven />
-    
-  <!-- the application context definition for the springapp DispatcherServlet -->
-  <!--
-  <bean name="/hello.htm" class="com.francesc.webapplication.spring.controller.HelloController">
-      <property name="userBO" ref="userBO" />
-  </bean>
-  -->
-
-
- 
 </beans>

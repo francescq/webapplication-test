@@ -1,5 +1,7 @@
 package com.francesc.webapplication.model.base;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,7 +10,12 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "USER")
-public class BaseUser {
+public class BaseUser implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2972209665971039548L;
 
 	private Long id;
 	private String name;

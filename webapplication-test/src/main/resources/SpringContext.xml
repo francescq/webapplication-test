@@ -13,8 +13,8 @@
 	<import resource="classpath:spring/services/hibernate-spring-service.xml"/>
 	<import resource="classpath:spring/services/log4j-spring-service.xml"/>
     
-    <!--  Components -->
-    <!-- import resource="classpath:spring/components/views-spring-component.xml" / -->
+    <!--  Views -->
+    <!--  import resource="classpath:spring/components/views-spring-component.xml" /-->
 	
 	<!-- Beans Declaration -->
 	<!--   <import resource="classpath:spring/HelloWorldBean.xml"/> -->
