@@ -7,6 +7,8 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.francesc.webapplication.model.base.BaseEntity;
+
 @Service
 public class BaseDao implements Dao {
 
@@ -17,24 +19,27 @@ public class BaseDao implements Dao {
 	}
 
 	@Override
-	public void saveOrUpdate(Object obj) {
+	public void saveOrUpdate(BaseEntity obj) {
 		sessionFactory.getCurrentSession().saveOrUpdate(obj);
 	}
 
 	@Override
-	public void delete(Object obj) {
+	public void delete(BaseEntity obj) {
 		sessionFactory.getCurrentSession().delete(obj);
 	}
 
 	@Override
-	public Object load(Class clazz, Long id) {
-		return sessionFactory.getCurrentSession().load(clazz, id);
+	public Object load(BaseEntity clazz) {
+		return sessionFactory.getCurrentSession().load(clazz.getClass(),
+				clazz.getId());
 	}
 
 	@Override
-	public Iterator findAll(Class clazz) {
-		return sessionFactory.getCurrentSession()
-				.createQuery("from " + clazz.getName()).iterate();
+	public Iterator<? extends BaseEntity> findAll(
+			Class<? extends BaseEntity> clazz) {
+		return (Iterator<? extends BaseEntity>) sessionFactory
+				.getCurrentSession().createQuery("from " + clazz.getName())
+				.iterate();
 	}
 
 	@Override

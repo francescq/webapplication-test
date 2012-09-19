@@ -27,7 +27,7 @@ public class UserBOImpl extends BaseBO implements UserBO {
 	@Override
 	@Transactional(readOnly = true)
 	public User getUser(User u) {
-		u = (User) getDao().load(User.class, u.getId());
+		u = (User) getDao().load(u);
 		return u;
 	}
 

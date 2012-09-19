@@ -1,7 +1,5 @@
 package com.francesc.webapplication.model.base;
 
-import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,7 +8,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "USER")
-public class BaseUser implements Serializable {
+public class BaseUser extends BaseEntity {
 
 	/**
 	 * 
@@ -26,6 +24,7 @@ public class BaseUser implements Serializable {
 	private String[] community;
 	private Boolean mailingList;
 
+	@Override
 	@Id
 	@GeneratedValue
 	@Column(name = "USER_ID")
