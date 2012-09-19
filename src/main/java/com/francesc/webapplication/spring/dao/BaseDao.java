@@ -1,26 +1,45 @@
 package com.francesc.webapplication.spring.dao;
 
-import java.util.List;
+import java.util.Iterator;
 
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-public abstract class BaseDao  extends HibernateDaoSupport{
+@Service
+public class BaseDao implements Dao {
 
-    public BaseDao() { }
+	@Autowired
+	private SessionFactory sessionFactory;
 
-    public void saveOrUpdate(Object obj) {
-        getHibernateTemplate().saveOrUpdate(obj);
-    }
+	public BaseDao() {
+	}
 
-    public void delete(Object obj) {
-        getHibernateTemplate().delete(obj);
-    }
+	@Override
+	public void saveOrUpdate(Object obj) {
+		sessionFactory.getCurrentSession().saveOrUpdate(obj);
+	}
 
-    public Object find(Class clazz, Long id) {
-        return getHibernateTemplate().load(clazz, id);
-    }
+	@Override
+	public void delete(Object obj) {
+		sessionFactory.getCurrentSession().delete(obj);
+	}
 
-    public List findAll(Class clazz) {
-        return getHibernateTemplate().find("from " + clazz.getName());
-    }
+	@Override
+	public Object load(Class clazz, Long id) {
+		return sessionFactory.getCurrentSession().load(clazz, id);
+	}
+
+	@Override
+	public Iterator findAll(Class clazz) {
+		return sessionFactory.getCurrentSession()
+				.createQuery("from " + clazz.getName()).iterate();
+	}
+
+	@Override
+	public Session getCurrentSession() {
+		return sessionFactory.getCurrentSession();
+	}
+
 }

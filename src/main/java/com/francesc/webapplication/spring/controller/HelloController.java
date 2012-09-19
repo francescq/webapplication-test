@@ -2,7 +2,7 @@ package com.francesc.webapplication.spring.controller;
 
 import java.util.Comparator;
 import java.util.Date;
-import java.util.List;
+import java.util.Iterator;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -51,7 +51,7 @@ public class HelloController {
 			BindingResult result, Model model) {
 		logger.info("USer arribat: " + user);
 		userBO.saveOrUpdateUser(user);
-		List<User> userList = userBO.listUser();
+		Iterator<User> userList = userBO.listUser();
 		model.addAttribute("userList", userList);
 		return "addUser";
 	}

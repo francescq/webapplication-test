@@ -29,9 +29,13 @@
    <!-- 3rdparty Loggers -->
    
    
-   <logger name="org.springframework.*">
+   <logger name="org.springframework">
        <level value="info" />
    </logger>
+   
+   <Logger name="org.springframework.transaction.interceptor">
+       <level value="debug" />
+   </Logger>
    
    <logger name="org.hibernate">
        <level value="info" />
@@ -46,7 +50,7 @@
    </Logger>
    <!-- Root Logger -->
    <root>
-       <priority value="info" />
+       <priority value="debug" />
        <appender-ref ref="file" />
    </root>
  

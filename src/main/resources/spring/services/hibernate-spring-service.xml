@@ -29,21 +29,28 @@
 
         <property name="dataSource" ref="myDataSource" />
         
-        <!-- 
-        <property name="packagesToScan" value="com.francesc.webapplication.model.base" />
-        -->
+        <property name="packagesToScan">
+            <list>
+                <value>com.francesc.webapplication.model.base</value>
+            </list>
+        </property>
         
+        <!-- 
         <property name="annotatedClasses" >
             <list>
                 <value>com.francesc.webapplication.model.base.BaseUser</value>
             </list>
         </property>
+        -->
+        
         <!-- property name="configLocation" value="/WEB-INF/config/spring/services/hibernate.cfg.xml"/ -->
         <property name="hibernateProperties" >
             <props>
                 <prop key="hibernate.dialect" >${hibernate.dialect}</prop>
                 <prop key="hibernate.show_sql" >${hibernate.show_sql}</prop>
                 <prop key="hibernate.hbm2ddl.auto" >${hibernate.hbm2ddl.auto}</prop>
+                <prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
+                <prop key="hibernate.generate_statistics">${hibernate.generate_statistics}</prop>
             </props>
         </property>
     </bean>
@@ -52,10 +59,11 @@
 	     <property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
     
-    <tx:annotation-driven />
     
+    <!-- 
     <bean id="dao" class="com.francesc.webapplication.spring.dao.Dao" >
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
+     -->
 
 </beans>

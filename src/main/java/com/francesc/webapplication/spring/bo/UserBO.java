@@ -1,12 +1,9 @@
 package com.francesc.webapplication.spring.bo;
 
-import java.util.List;
-
-import org.springframework.stereotype.Service;
+import java.util.Iterator;
 
 import com.francesc.webapplication.model.User;
 
-@Service
 public interface UserBO {
 	public void saveUser(User user);
 
@@ -14,6 +11,8 @@ public interface UserBO {
 
 	public void deleteUser(User user);
 
-	public List<User> listUser();
+	public Iterator<User> listUser();
+
+	public User getUser(User u);
 
 }

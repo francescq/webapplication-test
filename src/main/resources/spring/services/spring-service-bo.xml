@@ -6,18 +6,16 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
 
-    <bean id="baseBO" abstract="true" class="com.francesc.webapplication.spring.bo.impl.BaseBO">
-       
+   <!-- 
+   <bean id="baseBO" abstract="true" class="com.francesc.webapplication.spring.bo.impl.BaseBO">
+       <property name="dao" ref="dao" />
+       <property name="log" ref="log" />
     </bean>
     
-    <!--  UserBO -->
     <bean id="userBOImpl" class="com.francesc.webapplication.spring.bo.impl.UserImpl" parent="baseBO">
         
     </bean>
-    
-    <bean id="userBO" class="com.francesc.webapplication.spring.bo.impl.UserImpl">
-       
-    </bean>
+     -->
     <!--  /UserBO -->
     
 </beans>
