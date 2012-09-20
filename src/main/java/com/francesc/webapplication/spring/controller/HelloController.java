@@ -8,6 +8,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -19,6 +20,7 @@ import com.francesc.webapplication.model.User;
 import com.francesc.webapplication.spring.bo.UserBO;
 
 @Controller
+@Transactional
 public class HelloController {
 
 	protected final Log logger = LogFactory.getLog(getClass());
