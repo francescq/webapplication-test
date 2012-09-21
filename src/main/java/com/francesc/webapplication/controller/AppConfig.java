@@ -1,4 +1,4 @@
-package com.francesc.webapplication.spring.configuration;
+package com.francesc.webapplication.controller;
  
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -60,10 +60,6 @@
 	</bean>
     
     <tx:annotation-driven transaction-manager="transactionManager"/>
-    <!-- 
-    <bean id="dao" class="com.francesc.webapplication.spring.dao.Dao" >
-        <property name="sessionFactory" ref="sessionFactory" />
-    </bean>
-     -->
+
 
 </beans>

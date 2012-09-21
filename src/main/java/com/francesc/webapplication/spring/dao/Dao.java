@@ -1,6 +1,6 @@
 package com.francesc.webapplication.spring.dao;
 
-import java.util.Iterator;
+import java.util.List;
 
 import org.hibernate.Session;
 
@@ -13,8 +13,7 @@ public interface Dao {
 
 	public Object load(BaseEntity clazz);
 
-	public Iterator<? extends BaseEntity> findAll(
-			Class<? extends BaseEntity> clazz);
+	public List<? extends BaseEntity> findAll(Class<? extends BaseEntity> clazz);
 
 	public Session getCurrentSession();
 

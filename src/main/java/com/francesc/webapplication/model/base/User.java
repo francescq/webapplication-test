@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "USER")
-public class BaseUser extends BaseEntity {
+public class User extends BaseEntity {
 
 	/**
 	 * 

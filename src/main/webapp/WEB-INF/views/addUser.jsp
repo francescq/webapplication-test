@@ -18,7 +18,7 @@
 	<form:form action="addUser" commandName="user">
 		<table>
 			<tr>
-				<td>User Name :</td>
+				<td>User Name : output:'<c:out value="${user.name}" />'</td>
 				<td><form:input path="name" /><c:out value="${user.name}" /></td>
 			</tr>
 			<tr>
@@ -91,37 +91,22 @@
 	</form:form>
 
 		<table cellpadding="5">
-
 			<tr class="even">
-
 				<th>Name</th>
-
 				<th>Gender</th>
-
 				<th>Country</th>
-
 				<th>About You</th>
-
 			</tr>
 
 			<c:forEach items="${userList}" var="user" varStatus="status">
-
 				<tr class="<c:if test="${status.count % 2 == 0}">even</c:if>">
-
 					<td>${user.name}</td>
-
 					<td>${user.gender}</td>
-
 					<td>${user.country}</td>
-
 					<td>${user.aboutYou}</td>
-
 				</tr>
-
 			</c:forEach>
-
 		</table>
-
 
 </body>
 </html>

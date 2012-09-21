@@ -1,6 +1,6 @@
 package com.francesc.webapplication.spring.dao;
 
-import java.util.Iterator;
+import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -35,11 +35,9 @@ public class BaseDao implements Dao {
 	}
 
 	@Override
-	public Iterator<? extends BaseEntity> findAll(
-			Class<? extends BaseEntity> clazz) {
-		return (Iterator<? extends BaseEntity>) sessionFactory
-				.getCurrentSession().createQuery("from " + clazz.getName())
-				.iterate();
+	public List<? extends BaseEntity> findAll(Class<? extends BaseEntity> clazz) {
+		return (List<? extends BaseEntity>) sessionFactory.getCurrentSession()
+				.createQuery("from " + clazz.getName()).list();
 	}
 
 	@Override
