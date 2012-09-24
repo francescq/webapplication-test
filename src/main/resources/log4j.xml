@@ -33,6 +33,12 @@
        <level value="info" />
    </logger>
    
+   <logger name="org.springframework.mvc">
+       <level value="debug" />
+   </logger>
+   
+   
+   
    <Logger name="org.springframework.transaction.interceptor">
        <level value="debug" />
    </Logger>

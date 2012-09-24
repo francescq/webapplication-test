@@ -170,12 +170,10 @@
             <artifactId>hibernate-core</artifactId>
             <version>4.1.5.Final</version>
         </dependency>
- 
-        <!-- Hibernate c3p0 connection pool -->
         <dependency>
             <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-c3p0</artifactId>
-            <version>4.1.1.Final</version>
+            <artifactId>hibernate-validator</artifactId>
+            <version>4.2.0.Final</version>
         </dependency>
 
 		<dependency>

@@ -1,10 +1,15 @@
-package com.francesc.webapplication.model.base;
+package com.francesc.webapplication.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotBlank;
+
+import com.francesc.webapplication.model.base.BaseEntity;
 
 @Entity
 @Table(name = "USER")
@@ -36,6 +41,8 @@ public class User extends BaseEntity {
 		this.id = id;
 	}
 
+	@NotBlank
+	@NotNull
 	@Column(name = "USER_NAME")
 	public String getName() {
 		return name;
@@ -45,6 +52,7 @@ public class User extends BaseEntity {
 		this.name = name;
 	}
 
+	@NotBlank
 	@Column(name = "USER_PASSWORD")
 	public String getPassword() {
 		return password;
@@ -114,5 +122,4 @@ public class User extends BaseEntity {
 		this.mailingList = mailingList;
 
 	}
-
 }

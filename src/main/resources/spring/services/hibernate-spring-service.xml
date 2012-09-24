@@ -31,7 +31,7 @@
         
         <property name="packagesToScan">
             <list>
-                <value>com.francesc.webapplication.model.base</value>
+                <value>com.francesc.webapplication.model</value>
             </list>
         </property>
         

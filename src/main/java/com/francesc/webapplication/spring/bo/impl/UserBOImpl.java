@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.francesc.webapplication.model.base.User;
+import com.francesc.webapplication.model.User;
 import com.francesc.webapplication.spring.bo.UserBO;
 
 @Service
